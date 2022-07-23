@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://game_script/YearSelect.gd" type="Script" id=1]
+[ext_resource path="res://game_script/StageSelect.gd" type="Script" id=1]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,7 +16,7 @@ margin_top = 547.0
 margin_right = 438.0
 margin_bottom = 561.0
 rect_pivot_offset = Vector2( 230, 53 )
-text = "UP / DOWN - Navigate Chapters"
+text = "LEFT / RIGHT - Navigate Chapters"
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 645.0

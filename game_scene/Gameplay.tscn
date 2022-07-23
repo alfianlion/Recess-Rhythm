@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1023.0
+margin_bottom = 189.0
