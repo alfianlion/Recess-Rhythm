@@ -1,5 +1,4 @@
-extends CanvasLayer
-
+extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,6 +14,7 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-func _on_Button_pressed():
-	get_tree().change_scene("res://game_scene/HeroStory.tscn")
+func _unhandled_key_input(event):
+	if event is InputEventKey:
+		if Input.is_action_pressed("ui_accept"):
+			get_tree().change_scene("res://game_scene/Gameplay.tscn")
