@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/DynamicFont_Arial.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/style/stylebox_hover.tres" type="StyleBox" id=2]
+[ext_resource path="res://game_script/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/ARIAL.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 136.0
+margin_top = 85.0
+margin_right = 589.0
+margin_bottom = 174.0
+custom_fonts/font = ExtResource( 1 )
+text = "Rhythm Recess"
+
+[node name="New Game" type="Button" parent="."]
+margin_left = 155.0
+margin_top = 255.0
+margin_right = 416.0
+margin_bottom = 322.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+text = "New Game"
+
+[node name="Load Game" type="Button" parent="."]
+margin_left = 155.0
+margin_top = 356.0
+margin_right = 416.0
+margin_bottom = 423.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = ExtResource( 2 )
+text = "Load Game"
+
+[connection signal="pressed" from="New Game" to="." method="_on_Button_pressed"]
