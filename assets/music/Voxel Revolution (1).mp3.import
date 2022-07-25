@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voxel Revolution (1).mp3-16b8314b3b66604252b76d88628660d6.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Voxel Revolution (1).mp3"
+dest_files=[ "res://.import/Voxel Revolution (1).mp3-16b8314b3b66604252b76d88628660d6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

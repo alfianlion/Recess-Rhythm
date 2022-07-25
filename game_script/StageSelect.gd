@@ -17,4 +17,4 @@ func _ready():
 func _unhandled_key_input(event):
 	if event is InputEventKey:
 		if Input.is_action_pressed("ui_accept"):
-			get_tree().change_scene("res://game_scene/Gameplay.tscn")
+			get_tree().change_scene("res://game_scene/Game.tscn")
