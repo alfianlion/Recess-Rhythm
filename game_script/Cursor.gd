@@ -2,29 +2,40 @@ extends Area2D
 
 # Declare member variables here. Examples:
 var can_move = true
+var screen_size
 
-const MAX_Y = 222
-const MIN_Y = 98
-const MOVE_TIME = 0.5
+const MAX_Y = 450
+const MIN_Y = 90
+const MOVE_TIME = 0.25
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	screen_size = get_viewport_rect().size
 
 func _physics_process(delta):
-	_get_input()
+	_move()
 
-func _get_input():
-	if Input.is_action_just_pressed("move"):
-		if can_move:
-			_move()
-			
 func _move():
-	$Tween.interpolate_property(self, "position", position,
-								Vector2(position.x, clamp(get_global_mouse_position().y, MIN_Y, MAX_Y)), 
-								MOVE_TIME)
-	$Tween.start()
-	can_move = false
+	if can_move:
+		var motion_vector = Vector2()
+		if Input.is_action_pressed("ui_up"):
+			motion_vector += Vector2( 0, -1)
+		if Input.is_action_pressed("ui_down"):
+			motion_vector += Vector2( 0, 1)
+		if Input.is_action_pressed("ui_left"):
+			motion_vector += Vector2( -1, 0)
+		if Input.is_action_pressed("ui_right"):
+			motion_vector += Vector2( 1, 0)
+
+		if motion_vector != Vector2():
+			#tile_size is the size of the tilemap in pixels.
+			var new_position = position + motion_vector * MIN_Y
+			#Yes. I'm assuming you have a Tween node as a child.
+			$Tween.interpolate_property (self, 'position', position, Vector2(position.x, clamp(new_position.y, screen_size.y / 70 , screen_size.y * 0.3)), MOVE_TIME, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			#That last method's fifth property is how long it takes to go from one tile to the other in seconds.
+			$Tween.start()
+			can_move = false
+			print(new_position.y)
 	
 func _on_Tween_tween_completed(_object, _key):
 	can_move = true
