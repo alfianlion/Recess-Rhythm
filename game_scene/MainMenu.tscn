@@ -18,7 +18,7 @@ margin_top = 85.0
 margin_right = 589.0
 margin_bottom = 174.0
 custom_fonts/font = ExtResource( 1 )
-text = "Rhythm Recess"
+text = "Recess Rhythm"
 
 [node name="New Game" type="Button" parent="."]
 margin_left = 155.0

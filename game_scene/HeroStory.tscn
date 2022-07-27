@@ -4,7 +4,7 @@
 [ext_resource path="res://game_script/HeroStory.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 41
+size = 40
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -20,8 +20,7 @@ margin_top = 69.0
 margin_right = 736.0
 margin_bottom = 466.0
 custom_fonts/font = SubResource( 1 )
-text = "Hero story here
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pretium iaculis porta. Aliquam non condimentum magna. Nam suscipit a velit."
+text = "Jude has just enrolled into polytechnic and faces social anxiety. Hence, he has trouble mingling with his fellow peers. Music is his only form of solace as he braves through a new chapter in his life."
 align = 1
 valign = 1
 autowrap = true
