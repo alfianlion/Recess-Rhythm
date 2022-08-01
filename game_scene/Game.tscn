@@ -1,9 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game_script/Game.gd" type="Script" id=1]
 [ext_resource path="res://game_scene/Cursor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/images/background.jpg" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/ARIAL.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/music/Voxel Revolution (1).mp3" type="AudioStream" id=5]
+[ext_resource path="res://game_scene/Conductor.tscn" type="PackedScene" id=6]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 2
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -21,8 +26,16 @@ texture = ExtResource( 3 )
 expand = true
 stretch_mode = 4
 
+[node name="Panel" type="Panel" parent="."]
+light_mask = 129
+material = SubResource( 2 )
+margin_left = -1.0
+margin_top = -3.0
+margin_right = 1025.0
+margin_bottom = 297.0
+
 [node name="Cursor" parent="." instance=ExtResource( 2 )]
-position = Vector2( 111, 73 )
+position = Vector2( 111, 70 )
 
 [node name="NoteTimer" type="Timer" parent="."]
 
@@ -37,5 +50,10 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Score: 0"
 
+[node name="Conductor" parent="." instance=ExtResource( 6 )]
+position = Vector2( 518, 304 )
+stream = ExtResource( 5 )
+
 [connection signal="timeout" from="NoteTimer" to="." method="_on_NoteTimer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
