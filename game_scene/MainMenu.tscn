@@ -1,41 +1,71 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/fonts/DynamicFont_Arial.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/style/stylebox_hover.tres" type="StyleBox" id=2]
 [ext_resource path="res://game_script/MainMenu.gd" type="Script" id=3]
 [ext_resource path="res://assets/fonts/ARIAL.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/Main character sprites/png/Idle (1).png" type="Texture" id=5]
+[ext_resource path="res://assets/Main character sprites/png/Idle (2).png" type="Texture" id=6]
+[ext_resource path="res://assets/Main character sprites/png/Idle (4).png" type="Texture" id=7]
+[ext_resource path="res://assets/Main character sprites/png/Idle (5).png" type="Texture" id=8]
+[ext_resource path="res://assets/Main character sprites/png/Idle (6).png" type="Texture" id=9]
+[ext_resource path="res://assets/Main character sprites/png/Idle (7).png" type="Texture" id=10]
+[ext_resource path="res://assets/Main character sprites/png/Idle (9).png" type="Texture" id=11]
+[ext_resource path="res://assets/Main character sprites/png/Idle (12).png" type="Texture" id=12]
+[ext_resource path="res://assets/Main character sprites/png/Idle (14).png" type="Texture" id=13]
+[ext_resource path="res://assets/Main character sprites/png/Idle (15).png" type="Texture" id=14]
+[ext_resource path="res://assets/Main character sprites/png/Idle (10).png" type="Texture" id=15]
+[ext_resource path="res://assets/Main character sprites/png/Idle (11).png" type="Texture" id=16]
+[ext_resource path="res://assets/Main character sprites/png/Idle (8).png" type="Texture" id=17]
+[ext_resource path="res://assets/Main character sprites/png/Idle (3).png" type="Texture" id=18]
+[ext_resource path="res://assets/Main character sprites/png/Idle (13).png" type="Texture" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 4 )
 
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 19 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 30.0
+} ]
+
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource( 3 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 136.0
-margin_top = 85.0
-margin_right = 589.0
-margin_bottom = 174.0
+margin_left = 463.0
+margin_top = 75.0
+margin_right = 916.0
+margin_bottom = 164.0
 custom_fonts/font = ExtResource( 1 )
 text = "Recess Rhythm"
 
 [node name="New Game" type="Button" parent="."]
-margin_left = 155.0
-margin_top = 255.0
-margin_right = 416.0
-margin_bottom = 322.0
+margin_left = 560.0
+margin_top = 227.0
+margin_right = 821.0
+margin_bottom = 294.0
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 text = "New Game"
 
 [node name="Load Game" type="Button" parent="."]
-margin_left = 155.0
-margin_top = 356.0
-margin_right = 416.0
-margin_bottom = 423.0
+margin_left = 562.0
+margin_top = 355.0
+margin_right = 823.0
+margin_bottom = 422.0
 custom_fonts/font = SubResource( 1 )
 custom_styles/hover = ExtResource( 2 )
 text = "Load Game"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 412, 289 )
+frames = SubResource( 2 )
+animation = "idle"
+frame = 12
+playing = true
 
 [connection signal="pressed" from="New Game" to="." method="_on_Button_pressed"]
