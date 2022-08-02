@@ -31,12 +31,10 @@ func initialize(lane):
 		return
 	
 	speed = DIST_TO_TARGET * 0.7
-	
-func _on_CollisionShape2D_item_rect_changed():
-	get_parent()._increment_score(1)
 
 func _on_Timer_timeout():
 	queue_free()
 	
 func destroy(score):
+	$AnimatedSprite.visible = false
 	hit = true

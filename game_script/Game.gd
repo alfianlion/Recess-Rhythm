@@ -71,11 +71,3 @@ func increment_score(val):
 
 func _note_pass():
 	pass
-
-func _on_Cursor_body_entered(body):
-	print(body.name)
-	if body.name == "Cursor":
-		increment_score(1)
-		print("HIT")
-	else:
-		_note_pass()
