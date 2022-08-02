@@ -9,9 +9,9 @@ const CENTER_LANE_SPAWN = Vector2(SPAWN_X, 140)
 const BOTTOM_LANE_SPAWN = Vector2(SPAWN_X, 210)
 
 var speed = 0
+var hit = false; 
 
 func _physics_process(delta):
-	_on_CollisionShape2D_item_rect_changed()
 	position.x -= speed * delta
 	if position.x < -50:
 		queue_free()
@@ -37,3 +37,6 @@ func _on_CollisionShape2D_item_rect_changed():
 
 func _on_Timer_timeout():
 	queue_free()
+	
+func destroy(score):
+	hit = true

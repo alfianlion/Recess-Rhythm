@@ -72,3 +72,7 @@ func _on_StartTimer_timeout():
 		play()
 		$StartTimer.stop()
 	_report_beat()
+
+
+func _on_Cursor_body_entered():
+	get_parent()._increment_score(1)

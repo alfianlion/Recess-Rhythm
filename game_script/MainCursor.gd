@@ -13,7 +13,7 @@ var good = false
 var okay = false
 var current_note = null
 
-export var input = "ui_accept"
+export var input = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,6 +29,10 @@ func _move():
 			motion_vector += Vector2( 0, -1)
 		if Input.is_action_pressed("ui_down"):
 			motion_vector += Vector2( 0, 1)
+		if Input.is_action_pressed("ui_left"):
+			motion_vector += Vector2( -1, 0)
+		if Input.is_action_pressed("ui_right"):
+			motion_vector += Vector2( 1, 0)
 
 		if motion_vector != Vector2():
 			#tile_size is the size of the tilemap in pixels.
@@ -69,32 +73,6 @@ func _on_Tween_tween_completed(_object, _key):
 func _on_Cursor_area_entered(area):
 	if (area.is_in_group("Note")):
 		area.queue_free()
-
-func _on_PerfectArea_area_entered(area):
-	if area.is_in_group("Note"):
-		perfect = true
-
-func _on_PerfectArea_area_exited(area):
-	if area.is_in_group("Note"):
-		perfect = false
-
-func _on_GoodArea_area_entered(area):
-	if area.is_in_group("Note"):
-		good = true
-
-func _on_GoodArea_area_exited(area):
-	if area.is_in_group("Note"):
-		good = false
-
-func _on_OkayArea_area_entered(area):
-	if area.is_in_group("Note"):
-		okay = true
-		current_note = area
-
-func _on_OkayArea_area_exited(area):
-	if area.is_in_group("Note"):
-		okay = false
-		current_note = null
 
 func _reset():
 	current_note = null

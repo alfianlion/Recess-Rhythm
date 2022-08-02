@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game_script/Game.gd" type="Script" id=1]
 [ext_resource path="res://game_scene/Cursor.tscn" type="PackedScene" id=2]
@@ -6,9 +6,6 @@
 [ext_resource path="res://assets/fonts/ARIAL.TTF" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/music/Voxel Revolution (1).mp3" type="AudioStream" id=5]
 [ext_resource path="res://game_scene/Conductor.tscn" type="PackedScene" id=6]
-
-[sub_resource type="CanvasItemMaterial" id=2]
-blend_mode = 2
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -20,24 +17,24 @@ position = Vector2( 0, 1 )
 script = ExtResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 2.0
 margin_right = 1020.0
-margin_bottom = 597.0
+margin_bottom = 599.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 4
 
 [node name="Panel" type="Panel" parent="."]
-light_mask = 129
-material = SubResource( 2 )
-margin_left = -1.0
-margin_top = -3.0
-margin_right = 1025.0
-margin_bottom = 297.0
+margin_left = 108.0
+margin_top = -1.0
+margin_right = 114.0
+margin_bottom = 208.0
+
+[node name="NoteTimer" type="Timer" parent="."]
 
 [node name="Cursor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 111, 70 )
-
-[node name="NoteTimer" type="Timer" parent="."]
+scale = Vector2( 0.0720412, 0.0720411 )
 
 [node name="SpawnTimer" type="Timer" parent="."]
 

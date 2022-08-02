@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/images/cursor.png" type="Texture" id=1]
 [ext_resource path="res://game_script/Cursor.gd" type="Script" id=2]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -12,20 +12,39 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 8.0
-height = 18.0
+radius = 97.5542
+height = 388.667
 
-[node name="Cursor" type="Area2D" groups=["Cursor"]]
+[node name="Cursor" type="AnimatedSprite"]
+scale = Vector2( 0.00343053, 0.00343053 )
+frames = SubResource( 3 )
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.0876931, 0.0876931 )
-frames = SubResource( 1 )
+[node name="PerfectArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PerfectArea"]
+shape = SubResource( 2 )
+
+[node name="GoodArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
+position = Vector2( 181.789, -6.85706 )
+shape = SubResource( 2 )
+
+[node name="OkayArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OkayArea"]
+position = Vector2( -181.645, 4.57137 )
 shape = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[connection signal="area_entered" from="." to="." method="_on_Cursor_area_entered"]
+[node name="PushTimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="PerfectArea" to="." method="_on_PerfectArea_area_entered"]
+[connection signal="area_exited" from="PerfectArea" to="." method="_on_PerfectArea_area_exited"]
+[connection signal="area_entered" from="GoodArea" to="." method="_on_GoodArea_area_entered"]
+[connection signal="area_exited" from="GoodArea" to="." method="_on_GoodArea_area_exited"]
+[connection signal="area_entered" from="OkayArea" to="." method="_on_OkayArea_area_entered"]
+[connection signal="area_exited" from="OkayArea" to="." method="_on_OkayArea_area_exited"]
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

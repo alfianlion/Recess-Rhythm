@@ -65,10 +65,17 @@ func _on_Conductor_measure(position):
 	elif position == 4:
 		_spawn_notes(spawn_4_beat)
 	
-func _increment_score(val):
+func increment_score(val):
 	score += val * 1
 	$Score.text = "Score: " + str(score)
-	pass
 
 func _note_pass():
 	pass
+
+func _on_Cursor_body_entered(body):
+	print(body.name)
+	if body.name == "Cursor":
+		increment_score(1)
+		print("HIT")
+	else:
+		_note_pass()
