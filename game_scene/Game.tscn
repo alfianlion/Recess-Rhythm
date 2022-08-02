@@ -44,15 +44,15 @@ font_data = ExtResource( 4 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 36 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 29 ), ExtResource( 34 ), ExtResource( 23 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 13 ), ExtResource( 9 ) ],
-"loop": true,
-"name": " run",
-"speed": 30.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 35 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 19 ), ExtResource( 24 ), ExtResource( 31 ), ExtResource( 11 ), ExtResource( 25 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 33 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 29 ), ExtResource( 34 ), ExtResource( 23 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 13 ), ExtResource( 9 ) ],
+"loop": true,
+"name": " run",
+"speed": 30.0
 } ]
 
 [node name="Node2D" type="Node2D"]
@@ -91,8 +91,8 @@ custom_fonts/font = SubResource( 1 )
 text = "Score: 0"
 
 [node name="Conductor" parent="." instance=ExtResource( 6 )]
-position = Vector2( 518, 304 )
 stream = ExtResource( 5 )
+volume_db = -15.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 201, 360 )
@@ -104,4 +104,5 @@ playing = true
 
 [connection signal="timeout" from="NoteTimer" to="." method="_on_NoteTimer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

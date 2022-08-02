@@ -30,7 +30,7 @@ func initialize(lane):
 	else:
 		return
 	
-	speed = DIST_TO_TARGET * 0.7
+	speed = DIST_TO_TARGET / 1.5
 
 func _on_Timer_timeout():
 	queue_free()

@@ -1,7 +1,7 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
-export var bpm := 100
-export var measures := 4
+export var bpm := 122 
+export var measures := 8
 
 # Tracking the beat and song position
 var song_position = 0.0
@@ -72,7 +72,3 @@ func _on_StartTimer_timeout():
 		play()
 		$StartTimer.stop()
 	_report_beat()
-
-
-func _on_Cursor_body_entered():
-	get_parent()._increment_score(1)
