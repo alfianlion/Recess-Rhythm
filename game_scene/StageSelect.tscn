@@ -1,27 +1,83 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://game_script/StageSelect.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Futura Heavy font_0.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://game_scene/base_button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game_script/HUD.gd" type="Script" id=3]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource( 1 )
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_top = 511.0
-margin_right = 1022.0
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+base_button = ExtResource( 2 )
+total_levels = 4
+grid = NodePath("divider/centre_buttons/button_grid")
+
+[node name="divider" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level_text" type="Label" parent="divider"]
+margin_right = 1024.0
+margin_bottom = 240.0
+custom_fonts/font = SubResource( 1 )
+text = "
+CHOOSE A LEVEL:
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="centre_buttons" type="HBoxContainer" parent="divider"]
+margin_top = 244.0
+margin_right = 1024.0
 margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="spacer" type="Control" parent="divider/centre_buttons"]
+margin_right = 508.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="button_grid" type="GridContainer" parent="divider/centre_buttons"]
+margin_left = 512.0
+margin_right = 512.0
+margin_bottom = 356.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spacer2" type="Control" parent="divider/centre_buttons"]
+margin_left = 516.0
+margin_right = 1024.0
+margin_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="."]
-margin_left = 235.0
-margin_top = 547.0
-margin_right = 438.0
-margin_bottom = 561.0
-rect_pivot_offset = Vector2( 230, 53 )
-text = "LEFT / RIGHT - Navigate Chapters"
-
-[node name="Label2" type="Label" parent="."]
-margin_left = 645.0
-margin_top = 547.0
-margin_right = 801.0
-margin_bottom = 561.0
-rect_pivot_offset = Vector2( 230, 53 )
-text = "Spacebar - Enter Chapter"
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -61.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+clip_text = true
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
