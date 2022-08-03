@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Georgia Stomp By Dj Assault.mp3-f124804f22247187a08d48853790cf36.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Georgia Stomp By Dj Assault.mp3"
+dest_files=[ "res://.import/Georgia Stomp By Dj Assault.mp3-f124804f22247187a08d48853790cf36.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,106 @@
+[gd_scene load_steps=38 format=2]
+
+[ext_resource path="res://game_script/BaseGame.gd" type="Script" id=1]
+[ext_resource path="res://assets/Main character sprites/png/Run (15).png" type="Texture" id=3]
+[ext_resource path="res://assets/Main character sprites/png/Jump (3).png" type="Texture" id=4]
+[ext_resource path="res://assets/Main character sprites/png/Jump (4).png" type="Texture" id=5]
+[ext_resource path="res://assets/Main character sprites/png/Run (3).png" type="Texture" id=6]
+[ext_resource path="res://assets/Main character sprites/png/Jump (6).png" type="Texture" id=7]
+[ext_resource path="res://assets/Main character sprites/png/Jump (12).png" type="Texture" id=8]
+[ext_resource path="res://assets/Main character sprites/png/Run (13).png" type="Texture" id=9]
+[ext_resource path="res://assets/Main character sprites/png/Jump (14).png" type="Texture" id=10]
+[ext_resource path="res://assets/Main character sprites/png/Jump (9).png" type="Texture" id=11]
+[ext_resource path="res://assets/Main character sprites/png/Jump (5).png" type="Texture" id=12]
+[ext_resource path="res://assets/Main character sprites/png/Jump (7).png" type="Texture" id=13]
+[ext_resource path="res://assets/Main character sprites/png/Run (4).png" type="Texture" id=14]
+[ext_resource path="res://assets/Main character sprites/png/Run (12).png" type="Texture" id=15]
+[ext_resource path="res://assets/Main character sprites/png/Run (6).png" type="Texture" id=16]
+[ext_resource path="res://assets/Main character sprites/png/Run (11).png" type="Texture" id=17]
+[ext_resource path="res://assets/images/background.jpg" type="Texture" id=18]
+[ext_resource path="res://assets/Main character sprites/png/Run (10).png" type="Texture" id=19]
+[ext_resource path="res://assets/Main character sprites/png/Run (14).png" type="Texture" id=20]
+[ext_resource path="res://assets/Main character sprites/png/Jump (11).png" type="Texture" id=21]
+[ext_resource path="res://assets/Main character sprites/png/Run (5).png" type="Texture" id=22]
+[ext_resource path="res://assets/Main character sprites/png/Run (9).png" type="Texture" id=23]
+[ext_resource path="res://assets/Main character sprites/png/Jump (8).png" type="Texture" id=24]
+[ext_resource path="res://assets/Main character sprites/png/Run (8).png" type="Texture" id=25]
+[ext_resource path="res://assets/Main character sprites/png/Jump (1).png" type="Texture" id=26]
+[ext_resource path="res://assets/Main character sprites/png/Jump (15).png" type="Texture" id=27]
+[ext_resource path="res://assets/Main character sprites/png/Run (2).png" type="Texture" id=28]
+[ext_resource path="res://assets/Main character sprites/png/Jump (2).png" type="Texture" id=29]
+[ext_resource path="res://assets/Main character sprites/png/Jump (13).png" type="Texture" id=30]
+[ext_resource path="res://assets/Main character sprites/png/Run (7).png" type="Texture" id=31]
+[ext_resource path="res://assets/Main character sprites/png/Run (1).png" type="Texture" id=32]
+[ext_resource path="res://assets/Main character sprites/png/Jump (10).png" type="Texture" id=33]
+[ext_resource path="res://game_scene/Cursor.tscn" type="PackedScene" id=34]
+[ext_resource path="res://game_scene/Conductor.tscn" type="PackedScene" id=35]
+[ext_resource path="res://assets/fonts/ARIAL.TTF" type="DynamicFontData" id=36]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 36 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 29 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 13 ), ExtResource( 24 ), ExtResource( 11 ), ExtResource( 33 ), ExtResource( 21 ), ExtResource( 8 ), ExtResource( 30 ), ExtResource( 10 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 28 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 16 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 9 ), ExtResource( 20 ), ExtResource( 3 ) ],
+"loop": true,
+"name": " run",
+"speed": 30.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 0, 1 )
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_top = 2.0
+margin_right = 1020.0
+margin_bottom = 599.0
+texture = ExtResource( 18 )
+expand = true
+stretch_mode = 4
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 108.0
+margin_top = -1.0
+margin_right = 114.0
+margin_bottom = 208.0
+
+[node name="NoteTimer" type="Timer" parent="."]
+
+[node name="Cursor" parent="." instance=ExtResource( 34 )]
+position = Vector2( 111, 70 )
+scale = Vector2( 0.0720412, 0.0720411 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[node name="Score" type="Label" parent="."]
+margin_left = 45.0
+margin_top = 487.0
+margin_right = 285.0
+margin_bottom = 559.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Score: 0"
+
+[node name="Conductor" parent="." instance=ExtResource( 35 )]
+volume_db = -15.0
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 201, 360 )
+scale = Vector2( 0.565961, 0.460106 )
+frames = SubResource( 2 )
+animation = " run"
+frame = 13
+playing = true
+
+[connection signal="timeout" from="NoteTimer" to="." method="_on_NoteTimer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
+[connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Wah Game Loop.mp3-307ceaa2ec56f191b3557107359905da.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Wah Game Loop.mp3"
+dest_files=[ "res://.import/Wah Game Loop.mp3-307ceaa2ec56f191b3557107359905da.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
