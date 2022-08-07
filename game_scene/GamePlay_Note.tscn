@@ -12,13 +12,14 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 6.0
-height = 0.0
+radius = 11.0
+height = 6.0
 
 [node name="Note" type="Area2D" groups=["Note"]]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+rotation = 3.14159
 scale = Vector2( 0.058319, 0.058319 )
 frames = SubResource( 1 )
 flip_h = true

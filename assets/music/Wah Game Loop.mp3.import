@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Wah Game Loop.mp3-307ceaa2ec56f191b3557107359905da.m
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

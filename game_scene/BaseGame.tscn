@@ -97,7 +97,7 @@ position = Vector2( 201, 360 )
 scale = Vector2( 0.565961, 0.460106 )
 frames = SubResource( 2 )
 animation = " run"
-frame = 13
+frame = 8
 playing = true
 
 [connection signal="timeout" from="NoteTimer" to="." method="_on_NoteTimer_timeout"]

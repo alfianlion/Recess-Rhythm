@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/yoitrax-warrior.mp3-a65b4053c3a095ef75ba9e3ae8f4702a.mp3str"
+
+[deps]
+
+source_file="res://assets/music/yoitrax-warrior.mp3"
+dest_files=[ "res://.import/yoitrax-warrior.mp3-a65b4053c3a095ef75ba9e3ae8f4702a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

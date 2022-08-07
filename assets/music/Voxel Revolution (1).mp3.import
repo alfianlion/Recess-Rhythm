@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Voxel Revolution (1).mp3-16b8314b3b66604252b76d88628
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

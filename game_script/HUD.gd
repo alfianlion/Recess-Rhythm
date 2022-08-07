@@ -19,7 +19,7 @@ func generate_buttons(name : int):
 	var bb = base_button.instance()
 	bb.set_name(str(name))
 	bb.set_text(str(name))
-	bb.level_path = ("res://game_scene/stage_scene/Stage3.tscn")
+	bb.level_path = ("res://game_scene/stage_scene/Stage2.tscn")
 	grid.add_child(bb)
 
 

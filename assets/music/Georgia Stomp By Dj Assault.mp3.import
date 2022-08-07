@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Georgia Stomp By Dj Assault.mp3-f124804f22247187a08d
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
