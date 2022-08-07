@@ -5,4 +5,14 @@
 [node name="CanvasLayer" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
-text = "\"This subject is difficult, I really need some help\""
+margin_left = 219.0
+margin_top = 29.0
+margin_right = 789.0
+margin_bottom = 493.0
+text = "As the date of the school's anniversary approaches, Jude feels his nerves getting the better of him, but Flynn helps by assuring him that they have done all they could and that all the practice done in the past 2 months would bear fruit.  "
+
+[node name="Button" parent="Label" index="0"]
+margin_left = 565.0
+margin_top = 474.0
+margin_right = 704.0
+margin_bottom = 534.0

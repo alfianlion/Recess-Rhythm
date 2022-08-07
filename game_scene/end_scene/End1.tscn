@@ -5,4 +5,4 @@
 [node name="CanvasLayer" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
-text = "Jude starts to get comfortable with the new corriculum"
+text = "Jude has managed to gain himself a new friend, Flynn, who also shares a similar passion for music and takes pleasure in playing the violin."

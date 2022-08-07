@@ -5,4 +5,14 @@
 [node name="CanvasLayer" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
-text = "\"Will this ever end?\""
+margin_left = 226.0
+margin_top = 29.0
+margin_right = 792.0
+margin_bottom = 467.0
+text = "As the band club's performance went underway, Jude's fingers were shaking as his fingers landed on the keys of the piano. Reciting what Flynn told him before the performance, he gradually began to pick up his confidence and enjoy the moment."
+
+[node name="Button" parent="Label" index="0"]
+margin_left = 518.0
+margin_top = 469.0
+margin_right = 657.0
+margin_bottom = 529.0

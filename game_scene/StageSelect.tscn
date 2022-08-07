@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )
 base_button = ExtResource( 2 )
-total_levels = 4
+total_levels = 5
 grid = NodePath("divider/centre_buttons/button_grid")
 
 [node name="divider" type="VBoxContainer" parent="."]

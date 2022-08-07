@@ -5,4 +5,4 @@
 [node name="CanvasLayer" instance=ExtResource( 1 )]
 
 [node name="Label" parent="." index="0"]
-text = "\"Why is it so hard to make new friends?\""
+text = "Jude and Flynn made sure to practice hard so as to not let their club advisor down during the actual performance."

@@ -15,12 +15,12 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 293.0
-margin_top = 69.0
-margin_right = 736.0
-margin_bottom = 466.0
+margin_left = 282.0
+margin_top = 49.0
+margin_right = 725.0
+margin_bottom = 536.0
 custom_fonts/font = SubResource( 1 )
-text = "With music being his only form of solace, follow Jude as he is exposed to polytechnic life."
+text = "Jude has only recently started secondary school and has decided to join the Band Club due to his passion for playing the piano and music in general. Join him as he gains exposure to the many different genres of music and forges new friendships along the way."
 align = 1
 valign = 1
 autowrap = true

@@ -8,7 +8,7 @@ export (NodePath) var grid
 func _ready():
 	grid = get_node(grid)
 	
-	if !total_levels <= 4:
+	if !total_levels <= 5:
 		column_size()
 	
 	for i in range(0, total_levels):
@@ -19,7 +19,7 @@ func generate_buttons(name : int):
 	var bb = base_button.instance()
 	bb.set_name(str(name))
 	bb.set_text(str(name))
-	bb.level_path = ("res://game_scene/stage_scene/Stage2.tscn")
+	bb.level_path = ("res://game_scene/stage_scene/" + str(name) + ".tscn")
 	grid.add_child(bb)
 
 

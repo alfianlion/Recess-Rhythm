@@ -12,11 +12,11 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 97.5542
+radius = 109.711
 height = 388.667
 
 [node name="Cursor" type="AnimatedSprite"]
-scale = Vector2( 0.00343053, 0.00343053 )
+scale = Vector2( 0.0051458, 0.0046875 )
 frames = SubResource( 3 )
 script = ExtResource( 2 )
 
@@ -28,13 +28,13 @@ shape = SubResource( 2 )
 [node name="GoodArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoodArea"]
-position = Vector2( 181.789, -6.85706 )
+position = Vector2( 194.332, 0 )
 shape = SubResource( 2 )
 
 [node name="OkayArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OkayArea"]
-position = Vector2( -181.645, 4.57137 )
+position = Vector2( -194.332, 0 )
 shape = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
