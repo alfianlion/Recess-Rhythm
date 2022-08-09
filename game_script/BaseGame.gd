@@ -37,11 +37,6 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	randomize()
 	$Conductor.play_from_beat(0,2)		
-		
-func _unhandled_input(event):
-	if event.is_action("ui_cancel"):
-		if event.is_action_pressed("ui_cancel", false):
-			get_tree().change_scene("res://game_scene/MainMenu.tscn")
 	
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:

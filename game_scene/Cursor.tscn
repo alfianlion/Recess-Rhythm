@@ -12,7 +12,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 109.711
+radius = 194.333
 height = 388.667
 
 [node name="Cursor" type="AnimatedSprite"]
