@@ -57,7 +57,7 @@ text = "Start Game"
 position = Vector2( 412, 289 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 9
+frame = 6
 playing = true
 
 [connection signal="pressed" from="New Game" to="." method="_on_Button_pressed"]

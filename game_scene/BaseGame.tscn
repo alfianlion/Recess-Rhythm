@@ -56,6 +56,7 @@ animations = [ {
 } ]
 
 [node name="Node2D" type="Node2D"]
+pause_mode = 1
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
 
@@ -98,7 +99,7 @@ position = Vector2( 201, 360 )
 scale = Vector2( 0.565961, 0.460106 )
 frames = SubResource( 2 )
 animation = " run"
-frame = 13
+frame = 1
 playing = true
 
 [node name="Pause" type="Control" parent="."]
@@ -163,5 +164,5 @@ text = "Back To Title"
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
 [connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Resume" to="Pause" method="_on_Resume_pressed"]
-[connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Quit" to="Pause" method="_on_TitleScreen_pressed"]
 [connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Quit" to="Pause" method="_on_Quit_pressed"]
+[connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Quit" to="Pause" method="_on_TitleScreen_pressed"]

@@ -21,6 +21,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="base_button" type="Button"]
+pause_mode = 2
 margin_right = 200.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 200, 200 )
