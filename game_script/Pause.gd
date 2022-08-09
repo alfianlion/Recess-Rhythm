@@ -16,3 +16,4 @@ func _on_Resume_pressed():
 
 func _on_Quit_pressed():
 	get_tree().change_scene("res://game_scene/MainMenu.tscn")
+	self.is_paused = false

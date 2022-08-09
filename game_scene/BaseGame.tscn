@@ -56,7 +56,6 @@ animations = [ {
 } ]
 
 [node name="Node2D" type="Node2D"]
-pause_mode = 1
 position = Vector2( 0, 1 )
 script = ExtResource( 1 )
 
@@ -99,7 +98,7 @@ position = Vector2( 201, 360 )
 scale = Vector2( 0.565961, 0.460106 )
 frames = SubResource( 2 )
 animation = " run"
-frame = 1
+frame = 13
 playing = true
 
 [node name="Pause" type="Control" parent="."]

@@ -16,7 +16,6 @@ radius = 194.333
 height = 388.667
 
 [node name="Cursor" type="AnimatedSprite"]
-pause_mode = 2
 scale = Vector2( 0.0051458, 0.0046875 )
 frames = SubResource( 3 )
 script = ExtResource( 2 )
