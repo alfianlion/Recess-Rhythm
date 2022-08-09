@@ -98,7 +98,7 @@ position = Vector2( 201, 360 )
 scale = Vector2( 0.565961, 0.460106 )
 frames = SubResource( 2 )
 animation = " run"
-frame = 13
+frame = 11
 playing = true
 
 [node name="Pause" type="Control" parent="."]
@@ -151,6 +151,11 @@ margin_right = 263.0
 margin_bottom = 72.0
 text = "Resume"
 
+[node name="StageSelection" type="Button" parent="Pause/Pause Menu/VBoxContainer"]
+margin_right = 142.0
+margin_bottom = 20.0
+text = "Back To Stage Select"
+
 [node name="Quit" type="Button" parent="Pause/Pause Menu/VBoxContainer"]
 pause_mode = 2
 margin_top = 86.0
@@ -163,5 +168,6 @@ text = "Back To Title"
 [connection signal="beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="measure" from="Conductor" to="." method="_on_Conductor_measure"]
 [connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Resume" to="Pause" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/StageSelection" to="Pause" method="_on_StageSelection_pressed"]
 [connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Quit" to="Pause" method="_on_Quit_pressed"]
 [connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Quit" to="Pause" method="_on_TitleScreen_pressed"]

@@ -120,13 +120,14 @@ func _on_Conductor_beat(position):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats > 404:
-		if get_tree().change_scene("res://Scenes/End.tscn") != OK:
-			print ("Error changing scene to End")
-	
+	if song_position_in_beats > 404 and score >= 100:
+		get_tree().change_scene("res://Scenes/End.tscn")
+	if song_position_in_beats > 404 and score < 100:
+		get_tree().change_scene("res://game_scene/StageSelect.tscn")
+		
 func increment_score(val):
 	score += val * 1
-	$Score.text = "Score: " + str(score)
+	$Score.text = "Score to clear: 50 Score: " + str(score)
 
 func _note_pass():
 	pass

@@ -49,9 +49,10 @@ func _on_Conductor_beat(position):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
-	if song_position_in_beats > 193:
-		if get_tree().change_scene("res://game_scene/end_scene/End5.tscn") != OK:
-			print ("Error changing scene to End")
+	if song_position_in_beats > 193 and score >= 50:
+		get_tree().change_scene("res://game_scene/end_scene/End5.tscn")
+	if song_position_in_beats > 193 and score < 50:
+		get_tree().change_scene("res://game_scene/StageSelect.tscn")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

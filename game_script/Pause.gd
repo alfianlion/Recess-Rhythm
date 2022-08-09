@@ -14,6 +14,10 @@ func set_is_paused(value):
 func _on_Resume_pressed():
 	self.is_paused = false
 
+func _on_StageSelection_pressed():
+	get_tree().change_scene("res://game_scene/StageSelect.tscn")
+	self.is_paused = false
+
 func _on_Quit_pressed():
 	get_tree().change_scene("res://game_scene/MainMenu.tscn")
 	self.is_paused = false
