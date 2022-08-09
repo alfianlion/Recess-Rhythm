@@ -12,4 +12,4 @@ stream = ExtResource( 3 )
 bpm = 112
 
 [node name="AnimatedSprite" parent="." index="7"]
-frame = 1
+frame = 8
